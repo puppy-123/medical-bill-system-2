@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Billing System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #661d1d; /* Maroon background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Medical Billing System</h1>
+    <form action="/bill_summary" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="sickness">Diagnosis/Sickness:</label>
+        <input type="text" id="sickness" name="sickness" required>
+
+        <label for="symptoms">Symptoms (comma-separated):</label>
+        <input type="text" id="symptoms" name="symptoms" required>
+
+        <h2>Available Procedures</h2>
+        <label><input type="checkbox" name="procedures" value="general_checkup"> General Checkup ($20)</label>
+        <label><input type="checkbox" name="procedures" value="blood_test"> Blood Test ($15)</label>
+        <label><input type="checkbox" name="procedures" value="xray"> X-Ray ($25)</label>
+        <label><input type="checkbox" name="procedures" value="consultation"> Consultation ($10)</label>
+        <label><input type="checkbox" name="procedures" value="medication"> Medication ($30)</label>
+        <label><input type="checkbox" name="procedures" value="minor_surgery"> Minor Surgery ($50)</label>
+        <label><input type="checkbox" name="procedures" value="vaccination"> Vaccination ($10)</label>
+
+        <button type="submit">Create Bill</button>
+    </form>
+</body>
+</html>
