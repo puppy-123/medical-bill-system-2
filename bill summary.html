@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #661d1d; /* Maroon background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+        .bill-summary {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="bill-summary">
+        <h2>Medical Bill Summary</h2>
+        <p><strong>Patient Name:</strong> {{ name }}</p>
+        <p><strong>Age:</strong> {{ age }}</p>
+        <p><strong>Sickness:</strong> {{ sickness }}</p>
+        <p><strong>Symptoms:</strong> {{ symptoms }}</p>
+        <p><strong>Procedures:</strong> {{ procedures | join(', ') }}</p>
+        <p><strong>Total Bill:</strong> ${{ total }}</p>
+        <p>Thank you! Get well soon.</p>
+        <button onclick="window.location.href='doctor_info.html'">Contact the Doctor</button>
+    </div>
+</body>
+</html>
